@@ -28,6 +28,7 @@ This should set up a local python environment inside your repo so we can all kee
 
 If you install any dependencies make sure you do so via pipenv, so it gets added to the pipfile.
 
+
 add .env file
 you should have recieved a .env file with our SECRETS ;) add that to the root directory and re run`$ pipenv install`
 
