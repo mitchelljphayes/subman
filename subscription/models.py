@@ -35,10 +35,10 @@ class Subscription(models.Model):
     ]
     subscrption_id = models.UUIDField
     subscription_name = models.CharField(max_length=30)
-    subscription_cost = models.CharField(max_length=50)
-    subscription_start = models.DateTimeField()
+    subscription_cost = models.DecimalField(max_digits=10, decimal_places=4)
+    subscription_start = models.DateField()
     subscription_frequency = models.CharField(max_length=1, choices=SUBSCRIPTION_FREQUENCIES, default=SUBSCRIPTION_MONTHLY)
-    subscription_category = models.ForeignKey(Category, on_delete=PROTECT)
+    # subscription_category = models.ForeignKey(Category, on_delete=PROTECT)
 
     def __str__(self):
         return self.subscription_name
