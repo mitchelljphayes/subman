@@ -33,7 +33,7 @@ class Subscription(models.Model):
         (SUBSCRIPTION_MONTHLY, 'monthly'),
         (SUBSCRIPTION_YEARLY, 'yearly'),
     ]
-    subscrption_id = models.UUIDField
+    subscription_id = models.UUIDField
     subscription_name = models.CharField(max_length=30)
     subscription_cost = models.DecimalField(max_digits=10, decimal_places=4)
     subscription_start = models.DateField()
