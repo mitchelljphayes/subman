@@ -27,6 +27,3 @@ This should set up a local python environment inside your repo so we can all kee
 
 If you install any dependencies make sure you do so via pipenv, so it gets added to the pipfile.
 
-test
-
-
