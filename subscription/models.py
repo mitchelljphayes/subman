@@ -2,9 +2,10 @@ from django.contrib.auth.models import User
 from django.db import models
 from django.db.models.deletion import PROTECT
 from eventtools.models import BaseEvent, BaseOccurrence
+from datetime import datetime
 
 # Create your models here.
-class Category(models.Model):
+class Subscription(BaseEvent):
     CATEGORY_HEALTH = 'health'
     CATEGORY_ENTERTAINMENT = 'entertainment'
     CATEGORY_UTILITIES = 'utilities'
@@ -20,14 +21,7 @@ class Category(models.Model):
         (CATEGORY_INSURANCE, 'insurance'),
         (CATEGORY_OTHER, 'other')
     ]
-    category_id = models.UUIDField
-    category_type = models.CharField(max_length=13, choices=CATEGORY_CHOICES, default=CATEGORY_ENTERTAINMENT)
 
-    def __str__(self):
-        return self.category_type
-
-
-class Subscription(BaseEvent):
     SUBSCRIPTION_MONTHLY = 'M'
     SUBSCRIPTION_YEARLY = 'Y'
     
@@ -37,10 +31,11 @@ class Subscription(BaseEvent):
     ]
     subscription_id = models.UUIDField
     subscription_name = models.CharField(max_length=30)
+    subscription_user = models.ForeignKey(User, on_delete=PROTECT)
+    subscription_category = models.CharField(max_length=13, choices=CATEGORY_CHOICES, default=CATEGORY_ENTERTAINMENT)
     subscription_cost = models.DecimalField(max_digits=10, decimal_places=4)
     subscription_start = models.DateField()
     subscription_frequency = models.CharField(max_length=1, choices=SUBSCRIPTION_FREQUENCIES, default=SUBSCRIPTION_MONTHLY)
-    subscription_user = models.ForeignKey(User, on_delete=PROTECT)
 
     def __str__(self):
         return self.subscription_name
@@ -51,7 +46,6 @@ class SubscriptionOccurence(BaseOccurrence):
 class Transaction(models.Model):
     transaction_id = models.UUIDField
     transaction_subscription = models.ForeignKey(Subscription, on_delete=PROTECT)
-    # transaction_user = models.ForeignKey()
     transaction_date = models.DateTimeField(auto_now=True)
     transaction_cost = models.DecimalField(max_digits=10, decimal_places=4)
 
