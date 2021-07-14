@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 const Button = (props) => {
     return (
 
-        <div class="button-background">
+        <div className="button-background">
              {props.buttonIcon}
             
             <div className="button-icon flex">
