@@ -67,4 +67,46 @@ button {
   margin: 0 0 0 auto;
 }
 
-/*  */
+/* Sub.jsx */
+.sub-item {
+  margin: 12px 0;
+  padding: 10px;
+  background: #ffffff;
+  box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.12);
+  border-radius: 17px;
+}
+
+.sub-icon {
+  width: 2.5rem;
+  height: auto;
+}
+
+.sub-icon-background {
+  padding: 5px;
+  background: #ffffff;
+  box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+}
+
+
+/* Text area stuff */
+
+.textarea > .f3 {
+  font-size: 1rem;
+}
+
+.textarea > .f5 {
+  font-size: 1.3rem;
+}
+
+.textarea > .f2 {
+  font-size: 0.8rem;
+}
+
+.textarea > .bold {
+  font-weight: 800;
+}
+
+.textarea > .gray {
+  color: #696969;
+}
