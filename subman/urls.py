@@ -18,7 +18,10 @@ from django.urls import path, include
 import debug_toolbar
 from playground import views as playgroundViews
 from subscription import views as subscriptionViews
+<<<<<<< HEAD
 from rest_framework.authtoken import views as authViews
+=======
+>>>>>>> 03b3e08 (added user api)
 
 from rest_framework import routers
 
@@ -36,7 +39,11 @@ urlpatterns = [
     path('__debug__/', include(debug_toolbar.urls)),
     path('api/', include(router.urls)),
     path('', include(router.urls)),
+<<<<<<< HEAD
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('api-token-auth/', authViews.obtain_auth_token),
     path('dj-rest-auth/', include('dj_rest_auth.urls'))
+=======
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+>>>>>>> 03b3e08 (added user api)
 ]
