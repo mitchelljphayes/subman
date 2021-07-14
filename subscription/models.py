@@ -1,6 +1,7 @@
 from django.contrib.auth.models import User
 from django.db import models
 from django.db.models.deletion import PROTECT
+from eventtools.models import BaseEvent, BaseOccurrence
 
 # Create your models here.
 class Category(models.Model):
@@ -26,7 +27,7 @@ class Category(models.Model):
         return self.category_type
 
 
-class Subscription(models.Model):
+class Subscription(BaseEvent):
     SUBSCRIPTION_MONTHLY = 'M'
     SUBSCRIPTION_YEARLY = 'Y'
     
@@ -43,6 +44,9 @@ class Subscription(models.Model):
 
     def __str__(self):
         return self.subscription_name
+
+class SubscriptionOccurence(BaseOccurrence):
+    event = models.ForeignKey(Subscription, on_delete=PROTECT)
 
 class Transaction(models.Model):
     transaction_id = models.UUIDField
