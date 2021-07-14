@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
 
+/* Global CSS variables */
+:root {
+  --speed: 500ms;
+}
+
 /* global */
 * {
   box-sizing: border-box;
@@ -39,6 +44,10 @@ button {
   margin: 12px 0;
 }
 
+.nav-icons {
+  transition: width var(--speed) ease;
+}
+
 .nav-icon {
   width: 2.5rem;
   height: auto;
@@ -51,6 +60,8 @@ button {
   box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.12);
   border-radius: 33px;
   position: fixed;
+
+  transition: width var(--speed) ease;
 }
 
 /* todo transition: ease backgrpound while scroll down */
@@ -61,9 +72,48 @@ button {
 
 /* todo transsition: expand amination */
 .active {
-  min-width: 300px;
+  min-width: 270px;
   height: auto;
 }
+
+/* transition stuff */
+.nav-open-enter {
+  position: absolute;
+  transform: translateX(-110%);
+}
+
+.nav-open-enter-active {
+  transform: translateX(0%);
+  transition: all var(--speed) ease;
+}
+
+.nav-open-exit {
+  position: absolute;
+}
+
+.nav-open-exit-active {
+  transform: translateX(-110%);
+  transition: all var(--speed) ease;
+}
+
+.nav-closed-enter {
+  transform: translateX(110%);
+}
+
+.nav-closed-enter-active {
+  transform: translateX(0%);
+  transition: all var(--speed) ease;
+}
+
+.nav-closed-exit {
+
+}
+
+.nav-closed-exit-active {
+  transform: translateX(110%);
+  transition: all var(--speed) ease;
+}
+
 
 .profile {
   width: 4rem;
@@ -72,6 +122,7 @@ button {
   display: inline-block;
   margin: 0 0 0 auto;
 }
+
 
 /* Total Subs */
 /* todo total-subs expand animation  */
@@ -148,6 +199,7 @@ button {
 .sub-item .textarea {
   text-align: center;
 }
+
 
 /* Button.jsx */
 .button-background {
