@@ -53,6 +53,11 @@ urlpatterns = [
 >>>>>>> 03b3e08 (added user api)
 =======
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+<<<<<<< HEAD
     path('api-token-auth/', authViews.obtain_auth_token)
 >>>>>>> 0717581 (attempting to add auth)
+=======
+    path('api-token-auth/', authViews.obtain_auth_token),
+    path('dj-rest-auth/', include('dj_rest_auth.urls'))
+>>>>>>> ef4f2be (installed dj-rest-auth)
 ]
