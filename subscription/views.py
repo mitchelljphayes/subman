@@ -4,11 +4,17 @@ from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
 from rest_framework import permissions
 <<<<<<< HEAD
+<<<<<<< HEAD
 from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.authtoken.models import Token
 from rest_framework.response import Response
 =======
 >>>>>>> 03b3e08 (added user api)
+=======
+from rest_framework.authtoken.views import ObtainAuthToken
+from rest_framework.authtoken.models import Token
+from rest_framework.response import Response
+>>>>>>> 0717581 (attempting to add auth)
 from .serializers import UserSerializer, GroupSerializer, SubscriptionSerializer
 from .models import Subscription 
 
