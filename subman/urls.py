@@ -37,5 +37,6 @@ urlpatterns = [
     path('api/', include(router.urls)),
     path('', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    path('api-token-auth/', authViews.obtain_auth_token)
+    path('api-token-auth/', authViews.obtain_auth_token),
+    path('dj-rest-auth/', include('dj_rest_auth.urls'))
 ]
