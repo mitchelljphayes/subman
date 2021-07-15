@@ -11,7 +11,8 @@ import {ReactComponent as PlusIcon} from '../icons/plus.svg'
 
 
 
-const HomePage = () => {
+const HomePage = (props) => {
+
     return (
         <div className="container">
             Home Page
@@ -19,6 +20,7 @@ const HomePage = () => {
             <TotalSubs />
             <Button buttonIcon = {<PlusIcon className="button-icon"/>}
             buttonMessage = "Add Subscription"/>
+
             <Sub 
                 subIcon={<YoutubeLogo className="sub-icon"/>}
                 subName="Youtube Premium"
