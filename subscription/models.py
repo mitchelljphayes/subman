@@ -22,8 +22,13 @@ class Subscription(BaseEvent):
         (CATEGORY_OTHER, 'other')
     ]
 
+<<<<<<< HEAD
     SUBSCRIPTION_MONTHLY = 'month'
     SUBSCRIPTION_YEARLY = 'year'
+=======
+    SUBSCRIPTION_MONTHLY = 'M'
+    SUBSCRIPTION_YEARLY = 'Y'
+>>>>>>> origin/main
     
     SUBSCRIPTION_FREQUENCIES = [
         (SUBSCRIPTION_MONTHLY, 'monthly'),
@@ -36,7 +41,11 @@ class Subscription(BaseEvent):
     subscription_category = models.CharField(max_length=13, choices=CATEGORY_CHOICES, default=CATEGORY_ENTERTAINMENT)
     subscription_cost = models.DecimalField(max_digits=10, decimal_places=4)
     subscription_start = models.DateField()
+<<<<<<< HEAD
     subscription_frequency = models.CharField(max_length=10, choices=SUBSCRIPTION_FREQUENCIES, default=SUBSCRIPTION_MONTHLY)
+=======
+    subscription_frequency = models.CharField(max_length=1, choices=SUBSCRIPTION_FREQUENCIES, default=SUBSCRIPTION_MONTHLY)
+>>>>>>> origin/main
 
     def __str__(self):
         return self.subscription_name
