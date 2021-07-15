@@ -22,12 +22,10 @@ const HomePage = () => {
     const subList = axios.get("/subscription/")
     .then((response) => {console.log(
         response.data, "response");
-        var list = response.data;
+        // let list = response.data;
     })
-    .catch((error) => {console.log(error)})
-    .then(() => {console.log('logging get request')})
-    .then()
-        console.log(subList, "outside axios");
+    .catch((error) => {console.log(error)})    
+
     return (
         <div className="container">
             Home Page
