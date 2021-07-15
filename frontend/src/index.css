@@ -2,7 +2,7 @@
 
 /* Global CSS variables */
 :root {
-  --speed: 500ms;
+  --speed: 300ms;
 }
 
 /* global */
@@ -72,7 +72,7 @@ button {
 
 /* todo transsition: expand amination */
 .active {
-  min-width: 270px;
+  min-width: 260px;
   height: auto;
 }
 

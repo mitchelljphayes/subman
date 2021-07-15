@@ -11,7 +11,6 @@ import { CSSTransition } from 'react-transition-group';
 const Nav = () => {
     const [showNavBar, setShowNavBar] = useState(true);
     const [navWidth, setNavWidth] = useState(null);
-    console.log(showNavBar)
 
     function calcWidth(el) {
         const width = el.offsetWidth;
