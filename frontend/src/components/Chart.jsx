@@ -24,6 +24,7 @@ const Chart = () => {
                 3
                 </p>
                 </div>
+
         </div>
     )
 }
