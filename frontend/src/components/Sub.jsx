@@ -1,4 +1,7 @@
 import React from 'react'
+import {ReactComponent as YoutubeLogo} from '../icons/youtube-logo.svg'
+import {ReactComponent as PieChart} from '../icons/pie-chart.svg'
+
 
 const Sub = (props) => {
     return (

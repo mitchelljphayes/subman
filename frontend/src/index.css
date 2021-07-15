@@ -12,6 +12,11 @@
   padding: 0;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
 body {
   font-family: "Poppins", sans-serif;
   height: 120vh;
@@ -23,25 +28,40 @@ hr {
   border-top: 1px solid rgba(255, 255, 255, 0.623);
 }
 
-button {
-}
-
 .container {
   max-width: none;
   margin: 0px auto;
   padding: 12px;
-  overflow: auto;
+  overflow: visible;
 }
 .flex {
   display: flex;
 }
+.column {
+  flex-direction: column;
+}
 .space-between {
   justify-content: space-between;
+}
+.space-around {
+  justify-content: space-around;
+}
+.row {
+  flex-direction: row;
+}
+.save-shadow {
+  overflow: visible;
 }
 
 /* Nav.jsx */
 .nav-group {
   margin: 12px 0;
+}
+.overflow-x {
+  margin: 0 -2vw;
+  width: 98vw;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 .nav-icons {
@@ -127,8 +147,13 @@ button {
 /* Total Subs */
 /* todo total-subs expand animation  */
 .total-subs {
+  margin: 10px 0;
   transition: 0.3s;
-  background: linear-gradient(94.21deg, #cedefc 3.03%, #dee9fd 117.94%);
+  background: linear-gradient(
+    94.21deg,
+    #cedefc 3.03%,
+    rgba(238, 243, 252, 0.692) 117.94%
+  );
   border-radius: 18px;
 }
 
@@ -170,7 +195,6 @@ button {
   transform: rotate(180deg);
 }
 
-
 /* Sub.jsx */
 .sub-item {
   margin: 12px 0;
@@ -181,7 +205,8 @@ button {
 }
 
 .sub-icon {
-  width: 2.5rem;
+  width: 3rem;
+  margin: auto;
   height: auto;
 }
 
@@ -190,10 +215,17 @@ button {
   background: #ffffff;
   box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.12);
   border-radius: 12px;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-grow: 0.1;
 }
 
 .sub-time-left-icon-background {
   padding: 5px;
+  width: 50px;
+  height: 70px;
+  overflow: scroll;
 }
 
 .sub-item .textarea {
@@ -203,21 +235,51 @@ button {
 
 /* Button.jsx */
 .button-background {
-  margin: 12px 0;
+  margin: 12px 6px;
   padding: 20px;
   background: #ffffff;
   box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.12);
   border-radius: 45px;
-  width: 40vw;
-
+  min-width: 45vw;
+  min-height: 44vw;
+  text-align: center;
 }
 
 .button-icon {
-  padding:5px;
+  fill: #80aaff;
+  padding: 5px;
   width: 5rem;
   height: auto;
-  align-content: left;
+  margin: auto;
+}
+.button-message > p {
+  bottom: 0;
+  margin: auto 0 0 0;
+  width: auto;
+  font-size: 0.8rem;
 }
 
+/* RecentSubs.jsx */
+.rs-background {
+  margin: 12px 6px;
+  padding: 20px;
+  background: #ffffff;
+  box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.12);
+  border-radius: 45px;
+  min-width: 45vw;
+  min-height: 44vw;
+  text-align: center;
+}
 
-
+.rs-icon {
+  padding: 5px;
+  width: 5rem;
+  height: auto;
+  margin: auto;
+}
+.rs-message > p {
+  bottom: 0;
+  margin: auto 0 0 0;
+  width: auto;
+  font-size: 0.8rem;
+}
