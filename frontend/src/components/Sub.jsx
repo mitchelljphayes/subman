@@ -9,7 +9,6 @@ import {ReactComponent as Slack} from '../icons/Slack.svg'
 import {ReactComponent as Plus} from '../icons/plus.svg'
 import {ReactComponent as Youtube} from '../icons/Youtube.svg'
 
-<<<<<<< HEAD
 const Sub = ({name, price, period, icon}) => {
     console.log(name)
     console.log(icon)
