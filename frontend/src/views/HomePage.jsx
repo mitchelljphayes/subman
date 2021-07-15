@@ -5,6 +5,7 @@ import Sub from "../components/Sub"
 import AddButton from "../components/AddButton"
 import RecentSubs from '../components/RecentSubs'
 import Chart from '../components/Chart'
+import axios from "axios";
 
 /* TEMPORARY, FOR TESTING PURPOSES */
 import {ReactComponent as YoutubeLogo} from '../icons/youtube-logo.svg'
@@ -13,8 +14,20 @@ import {ReactComponent as PlusIcon} from '../icons/plus.svg'
 
 
 
-const HomePage = (props) => {
 
+
+const HomePage = () => {
+
+    // const axios = require('axios').default;
+    const subList = axios.get("/subscription/")
+    .then((response) => {console.log(
+        response.data, "response");
+        var list = response.data;
+    })
+    .catch((error) => {console.log(error)})
+    .then(() => {console.log('logging get request')})
+    .then()
+        console.log(subList, "outside axios");
     return (
         <div className="container">
             Home Page
@@ -30,10 +43,10 @@ const HomePage = (props) => {
                 
             <div style={{margin:"10px 0"}}>
                 <b>Up comming payments(days)</b>
-
+                
                 <Sub 
                     subIcon={<YoutubeLogo className="sub-icon"/>}
-                    subName="Youtube Premium"
+                    subName='{props.data.subscription_name}'
                     subPrice="$99.99"
                     subTimePeriod="month"
                     subTimeLeftIcon={<Chart className=""/>}
