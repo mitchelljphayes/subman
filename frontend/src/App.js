@@ -13,7 +13,7 @@ console.log(subsList);
 
 
 function App() {
-  return <HomePage data='subsList' />;
+  return <HomePage data={subsList.data} />;
 }
 
 export default App;
