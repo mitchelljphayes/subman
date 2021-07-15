@@ -9,6 +9,7 @@ import {ReactComponent as Slack} from '../icons/Slack.svg'
 import {ReactComponent as Plus} from '../icons/plus.svg'
 import {ReactComponent as Youtube} from '../icons/Youtube.svg'
 
+<<<<<<< HEAD
 const Sub = ({name, price, period, icon}) => {
     console.log(name)
     console.log(icon)
@@ -32,6 +33,15 @@ const Sub = ({name, price, period, icon}) => {
     } 
 
     
+=======
+
+const Sub = ({name, price, period, start}) => {
+    
+    console.log(name)
+    const url = 'https://raw.githubusercontent.com/mitchelljphayes/subman/4748cdb21442ec0974eb84327c67ff25665ec0e8/frontend/src/icons/subicons/'
+    const iconPath = url+name+'.svg'
+    console.log(iconPath)
+>>>>>>> origin/main
     return (
         <div className="sub-item flex space-between">
             <div className="sub-icon-background flex">
@@ -44,7 +54,10 @@ const Sub = ({name, price, period, icon}) => {
                 </div>
                 
             </div>
-            <Chart />
+            <Chart 
+                period={period}
+                start={start}    
+            />
             
         </div>
         
