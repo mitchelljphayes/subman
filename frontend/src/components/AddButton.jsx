@@ -11,7 +11,7 @@ const AddButton = (props) => {
                 {props.buttonIcon}
                 <div className="button-message">
 
-                <p>{props.buttonMessage}</p>
+                    <p>{props.buttonMessage}</p>
                 </div>
             </div>
          </Link>
